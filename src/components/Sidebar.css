@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+.sidebar{
+    /* left:0; */
+    width:16%;
+    height:100%;
+    /* background-color: aquamarine; */
+    background-color: #a7eecc;
+    color: black;
+    padding-top: 40px;
+    position: sticky;
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  /* opacity: 1; */
+  /* font-family: 'Lora', serif; */
+}
+
+.compo{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.text{
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.compo1{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 10px;
+    margin-top: 40px;
+    /* text-decoration: none; */
+}

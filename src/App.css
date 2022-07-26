@@ -1,16 +1,17 @@
 .app{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
 
-  background: linear-gradient(
+  /* background: linear-gradient(
     rgba(255, 255, 255, 0.1),
     rgba(255, 255, 255, 0.3)
   ),
   url('https://img.freepik.com/free-vector/high-school-concept-illustration_114360-8279.jpg?w=2000');
 background-size: contain;
-background-position: center;
+background-position: center; */
 }
 
 form{

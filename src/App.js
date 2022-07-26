@@ -1,69 +1,34 @@
 import { useState } from 'react';
 import './App.css';
-import FormInput from './components/FormInput';
+// import FormInput from './components/FormInput';
+import LoginForm from './components/LoginForm';
+import StudentRegisterForm from './components/StudentRegisterForm';
+import AssignmentForm from './components/AssignmentForm';
+import RaiseQuery from './components/RaiseQuery';
+import ScheduleAppointment from './components/ScheduleAppointment';
+import Profile from './components/Profile';
+import Sidebar from './components/Sidebar';
+import Papaparsing from './components/Papaparsing';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+
 function App() {
-  const[values,setValues]=useState({
-    username:'',
-    email:'',
-    birthday:'',
-    password:'',
-    confirmPassword:''
-  })
-  const inputs=[
-    {
-      id:1,
-      name:'SAPID',
-      type:'text',
-      placeholder:'SAPID',
-      errorMessage:"SAPID should be 10 digits and shouldn't include any other characters!",
-      label:'SAPID',
-      pattern: "^[0-9]{10}$",
-      required:true,
-    },
-    {
-      id: 2,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
-      label: "Email",
-      required: true,
-    },
-    {
-      id: 3,
-      name: "password",
-      type: "password",
-      placeholder: "Password",
-      errorMessage:"Password should be 10 characters and include at least 1 letter, 1 number and 1 special character!",
-      label: "Password",
-      pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-      required: true,
-    },
-  ]
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
-
-  const onChange=(e)=>{
-    setValues({...values,
-      [e.target.name]:e.target.value})
-  }
-
-  console.log(values);
 
   return (
     <div className='app'>
-      <form onSubmit={handleSubmit}>
-        <h1>LOGIN</h1>
-        {inputs.map((input)=>(
-          <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange} />
-        ))}
-        
-        <button>Submit</button>
-      </form>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/studentRegister" element={<StudentRegisterForm />} />
+          <Route path="/assignment" element={<AssignmentForm />} />
+          <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/raiseQuery" element={<RaiseQuery />} />
+          <Route path="/schedule" element={<ScheduleAppointment />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/papaparsing" element={<Papaparsing />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
 
-export default App;
+export default App
